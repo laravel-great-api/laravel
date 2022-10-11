@@ -12,7 +12,11 @@
     "homepage": "https://github.com/laravel-great-api/laravel",
     "keywords": ["Laravel", "Laravel"],
     "require": {
-        "illuminate/support": "~9"
+        "illuminate/support": "~9",
+        "laravel-great-api/eloquent": "dev-main",
+        "laravel-great-api/helpers": "dev-main",
+        "laravel-great-api/response": "dev-main",
+        "laravel-great-api/router": "dev-main"
     },
     "require-dev": {
         "phpunit/phpunit": "~9.0",
