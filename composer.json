@@ -1,0 +1,41 @@
+{
+    "name": "laravel-great-api/laravel",
+    "description": "",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Author Name",
+            "email": "author@email.com",
+            "homepage": "http://author.com"
+        }
+    ],
+    "homepage": "https://github.com/laravel-great-api/laravel",
+    "keywords": ["Laravel", "Laravel"],
+    "require": {
+        "illuminate/support": "~9"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~9.0",
+        "orchestra/testbench": "~7"
+    },
+    "autoload": {
+        "psr-4": {
+            "LaravelGreatApi\\Laravel\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "LaravelGreatApi\\Laravel\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "LaravelGreatApi\\Laravel\\LaravelServiceProvider"
+            ],
+            "aliases": {
+                "Laravel": "LaravelGreatApi\\Laravel\\Facades\\Laravel"
+            }
+        }
+    }
+}
