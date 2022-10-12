@@ -46,7 +46,7 @@ class Policy
 	 */
 	protected function allow(string $message = null,  int $code = null): Response
 	{
-		return Response::allow($message = null, $code = null);
+		return Response::allow($message, $code);
 	}
 
 	/**
@@ -58,6 +58,6 @@ class Policy
 	 */
 	protected function deny(string $message = null,  int $code = null): Response
 	{
-		return Response::deny($message = null, $code = null);
+		return Response::deny($message, $code);
 	}
 }
