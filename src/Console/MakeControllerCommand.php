@@ -5,35 +5,49 @@ namespace LaravelGreatApi\Laravel\Console;
 use Illuminate\Console\Concerns\CreatesMatchingTest;
 use Illuminate\Console\GeneratorCommand;
 
-class MakeActionCommand extends GeneratorCommand
+class MakeControllerCommand extends GeneratorCommand
 {
     use CreatesMatchingTest;
 
+    /**
+     * @var string
+     */
     protected $name = 'make:controller-action';
 
-    protected $description = 'Create a new Action';
+    /**
+     * @var string
+     */
+    protected $description = 'Create a new controller action';
 
-    protected $type = 'Action';
+    /**
+     * @var string
+     */
+    protected $type = 'Controller';
 
-    protected function getStub()
+    /**
+     * @return string
+     */
+    protected function getStub(): string
     {
         return $this->resolveStubPath('/stubs/action.stub');
     }
 
     /**
-     * Resolve the fully-qualified path to the stub.
-     *
      * @param string $stub
      * @return string
      */
-    protected function resolveStubPath($stub)
+    protected function resolveStubPath($stub): string
     {
         return file_exists($customPath = $this->laravel->basePath(trim($stub, '/')))
             ? $customPath
             : __DIR__ . $stub;
     }
 
-    protected function getDefaultNamespace($rootNamespace)
+    /**
+     * @param string $rootNamespace
+     * @return string
+     */
+    protected function getDefaultNamespace($rootNamespace): string
     {
         return $rootNamespace.'\Http\Controllers';
     }
