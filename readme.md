@@ -1,4 +1,4 @@
-# Laravel
+# Laravel Great API
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Total Downloads][ico-downloads]][link-downloads]
@@ -21,24 +21,13 @@ $ composer require laravel-great-api/laravel
 
 Please see the [changelog](changelog.md) for more information on what has changed recently.
 
-## Testing
-
-``` bash
-$ composer test
-```
-
 ## Contributing
 
 Please see [contributing.md](contributing.md) for details and a todolist.
 
 ## Security
 
-If you discover any security related issues, please email author@email.com instead of using the issue tracker.
-
-## Credits
-
-- [Author Name][link-author]
-- [All Contributors][link-contributors]
+If you discover any security related issues, please email alexwalsh.dev@gmail.com instead of using the issue tracker.
 
 ## License
 
