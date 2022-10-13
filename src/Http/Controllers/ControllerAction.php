@@ -11,6 +11,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Reflector;
 use LaravelGreatApi\Laravel\Policy;
+use LaravelGreatApi\Response\JsonResponse;
 use ReflectionClass;
 use ReflectionFunctionAbstract;
 use ReflectionMethod;
@@ -58,11 +59,11 @@ class ControllerAction
 
 	private function handleResponse($response)
 	{
-		if ($this->isCustomResponse()) {
-			return $response;
-		}
+        if (is_array($response) || is_string($response) || is_numeric($response)) {
+            return new JsonResponse($response);
+        }
 
-		return ResponseHandler::handle($response);
+        return $response;
 	}
 
 	/**
@@ -145,11 +146,6 @@ class ControllerAction
 	protected function hasProperty(string $property)
 	{
 		return property_exists($this, $property);
-	}
-
-	private function isCustomResponse()
-	{
-		return $this->hasProperty('customResponse') && $this->customResponse;
 	}
 
     /**
