@@ -15,6 +15,12 @@ class ServiceProvider extends BaseServiceProvider
     public function boot(): void
     {
         $this->commands([MakeControllerCommand::class]);
+
+        if ($this->app->runningInConsole()) {
+            $this->publishes([
+                __DIR__.'/../config/laravel-great-api.php' => config_path('laravel-great-api.php'),
+            ], 'laravel-great-api.config');
+        }
     }
 
     /**
@@ -24,6 +30,6 @@ class ServiceProvider extends BaseServiceProvider
      */
     public function register(): void
     {
-        //
+        $this->mergeConfigFrom(__DIR__.'/../config/laravel-great-api.php', 'laravel-great-api');
     }
 }
