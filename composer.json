@@ -21,7 +21,8 @@
         "laravel-great-api/eloquent": "dev-main",
         "laravel-great-api/helpers": "dev-main",
         "laravel-great-api/response": "dev-main",
-        "laravel-great-api/router": "dev-main"
+        "laravel-great-api/router": "dev-main",
+        "laravel-great-api/access": "dev-master"
     },
     "require-dev": {
         "phpunit/phpunit": "~9.0",
