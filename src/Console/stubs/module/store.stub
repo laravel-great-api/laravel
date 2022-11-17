@@ -1,0 +1,96 @@
+<?php
+
+namespace {{ namespace }};
+
+use Illuminate\Http\Request;
+use LaravelGreatApi\Eloquent\Store\Fields\Field;
+use LaravelGreatApi\Eloquent\Store\Store;
+use LaravelGreatApi\Helpers\Data;
+use {{ namespace }}\Models\{{ class }};
+
+class {{ class }}Store
+{
+	/**
+	 * Define fields
+	 *
+	 * @return array
+	 */
+	public function fields(Field $field, Data $data): array
+	{
+		return [
+            //
+		];
+	}
+
+	/**
+	 * Before save hook
+	 *
+	 * @param {{ namespace }}\Models\{{ class }} $model
+	 * @param \LaravelGreatApi\Helpers\Data $data
+	 * @return void
+	 */
+	public function beforeSave({{ class }} $model, Data $data): void
+	{
+        //
+	}
+
+	/**
+	 * After save hook
+	 *
+	 * @param {{ namespace }}\Models\{{ class }} $model
+	 * @param \LaravelGreatApi\Helpers\Data $data
+	 * @return void
+	 */
+	public function afterSave({{ class }} $model, Data $data): void
+	{
+        //
+	}
+
+	/**
+	 * Before create hook
+	 *
+	 * @param {{ namespace }}\Models\{{ class }} $model
+	 * @param \LaravelGreatApi\Helpers\Data $data
+	 * @return void
+	 */
+	public function beforeCreate({{ class }} $model, Data $data)
+	{
+        //
+	}
+
+	/**
+	 * After create hook
+	 *
+	 * @param {{ namespace }}\Models\{{ class }} $model
+	 * @param \LaravelGreatApi\Helpers\Data $data
+	 * @return void
+	 */
+	public function afterCreate({{ class }} $model, Data $data)
+	{
+        //
+	}
+
+	/**
+	 * Before update hook
+	 *
+	 * @param {{ namespace }}\Models\{{ class }} $model
+	 * @param \LaravelGreatApi\Helpers\Data $data
+	 * @return void
+	 */
+	public function beforeUpdate({{ class }} $model, Data $data)
+	{
+        //
+	}
+
+	/**
+	 * After update hook
+	 *
+	 * @param {{ namespace }}\Models\{{ class }} $model
+	 * @param \LaravelGreatApi\Helpers\Data $data
+	 * @return void
+	 */
+	public function afterUpdate({{ class }} $model, Data $data)
+	{
+        //
+	}
+}
