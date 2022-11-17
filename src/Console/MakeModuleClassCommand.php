@@ -50,9 +50,7 @@ class MakeModuleClassCommand extends GeneratorCommand
      */
     protected function getDefaultNamespace($rootNamespace): string
     {
-        $module = Str::pluralStudly(
-            Str::upper($this->argument('name'))
-        );
+        $module = Str::pluralStudly($this->argument('name'));
 
         return $rootNamespace . "\Modules\\$module";
     }
