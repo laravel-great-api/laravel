@@ -4,6 +4,7 @@ namespace LaravelGreatApi\Laravel;
 
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 use LaravelGreatApi\Laravel\Console\MakeControllerCommand;
+use LaravelGreatApi\Laravel\Console\MakeModuleClassCommand;
 
 class ServiceProvider extends BaseServiceProvider
 {
@@ -14,7 +15,10 @@ class ServiceProvider extends BaseServiceProvider
      */
     public function boot(): void
     {
-        $this->commands([MakeControllerCommand::class]);
+        $this->commands([
+            MakeControllerCommand::class,
+            MakeModuleClassCommand::class
+        ]);
 
         if ($this->app->runningInConsole()) {
             $this->publishes([
