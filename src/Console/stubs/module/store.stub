@@ -7,7 +7,7 @@ use LaravelGreatApi\Eloquent\Store\Fields\Field;
 use LaravelGreatApi\Eloquent\Store\Store;
 use LaravelGreatApi\Helpers\Data;
 
-class {{ class }}
+class {{ class }} extends Store
 {
 	/**
 	 * Define fields
