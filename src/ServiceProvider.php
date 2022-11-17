@@ -18,10 +18,7 @@ class ServiceProvider extends BaseServiceProvider
     public function boot(): void
     {
         $this->commands([
-            MakeControllerCommand::class,
-            MakeModuleClassCommand::class,
-            MakeModuleStoreCommand::class,
-            MakeModuleModelCommand::class,
+            MakeControllerCommand::class
         ]);
 
         if ($this->app->runningInConsole()) {
