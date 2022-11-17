@@ -5,6 +5,7 @@ namespace LaravelGreatApi\Laravel;
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 use LaravelGreatApi\Laravel\Console\MakeControllerCommand;
 use LaravelGreatApi\Laravel\Console\MakeModuleClassCommand;
+use LaravelGreatApi\Laravel\Console\MakeModuleModelCommand;
 use LaravelGreatApi\Laravel\Console\MakeModuleStoreCommand;
 
 class ServiceProvider extends BaseServiceProvider
@@ -20,6 +21,7 @@ class ServiceProvider extends BaseServiceProvider
             MakeControllerCommand::class,
             MakeModuleClassCommand::class,
             MakeModuleStoreCommand::class,
+            MakeModuleModelCommand::class,
         ]);
 
         if ($this->app->runningInConsole()) {
