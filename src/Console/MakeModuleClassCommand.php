@@ -4,32 +4,33 @@ namespace LaravelGreatApi\Laravel\Console;
 
 use Illuminate\Console\Concerns\CreatesMatchingTest;
 use Illuminate\Console\GeneratorCommand;
+use Illuminate\Support\Str;
 
-class MakeControllerCommand extends GeneratorCommand
+class MakeModuleClassCommand extends GeneratorCommand
 {
     use CreatesMatchingTest;
 
     /**
      * @var string
      */
-    protected $name = 'make:controller-action';
+    protected $name = 'make:module-class';
 
     /**
      * @var string
      */
-    protected $description = 'Create a new controller action';
+    protected $description = 'Create a new module class action';
 
     /**
      * @var string
      */
-    protected $type = 'Controller';
+    protected $type = 'Module class';
 
     /**
      * @return string
      */
     protected function getStub(): string
     {
-        return $this->resolveStubPath('/stubs/action.stub');
+        return $this->resolveStubPath('/stubs/module/class.stub');
     }
 
     /**
@@ -49,6 +50,10 @@ class MakeControllerCommand extends GeneratorCommand
      */
     protected function getDefaultNamespace($rootNamespace): string
     {
-        return $rootNamespace.'\Http\Controllers';
+        $module = Str::pluralStudly(
+            Str::upper($this->argument('name'))
+        );
+
+        return $rootNamespace . "\Modules\\$module";
     }
 }
