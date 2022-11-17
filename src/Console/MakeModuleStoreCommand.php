@@ -50,10 +50,8 @@ class MakeModuleStoreCommand extends GeneratorCommand
      */
     protected function getDefaultNamespace($rootNamespace): string
     {
-        $module = Str::remove('Store', $this->argument('name'));
+        $module = Str::pluralStudly($this->argument('name'));
 
-        $module = Str::pluralStudly($module);
-
-        return "Modules\\$module";
+        return "Modules\\$module\\Models";
     }
 }
