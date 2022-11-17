@@ -1,0 +1,27 @@
+<?php
+
+namespace {{ namespace }};
+
+use Illuminate\Database\Eloquent\Model;
+use {{ namespace }}\Traits\{{ class }}Relations;
+use {{ namespace }}\Traits\{{ class }}Scopes;
+use {{ namespace }}\Traits\{{ class }}Attributes;
+use {{ namespace }}\Traits\{{ class }}Methods;
+use LaravelGreatApi\Eloquent\Traits\HasStore;
+
+class {{ class }} extends Model
+{
+	use
+		{{ class }}Relations,
+		{{ class }}Scopes,
+		{{ class }}Attributes,
+		{{ class }}Methods,
+		HasStore;
+
+    /**
+     * Declare store
+     *
+     * @var string
+     */
+    protected $store = null;
+}

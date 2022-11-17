@@ -6,31 +6,31 @@ use Illuminate\Console\Concerns\CreatesMatchingTest;
 use Illuminate\Console\GeneratorCommand;
 use Illuminate\Support\Str;
 
-class MakeModuleClassCommand extends GeneratorCommand
+class MakeModuleModelCommand extends GeneratorCommand
 {
     use CreatesMatchingTest;
 
     /**
      * @var string
      */
-    protected $name = 'make:module-class';
+    protected $name = 'make:module-model';
 
     /**
      * @var string
      */
-    protected $description = 'Create a new module class action';
+    protected $description = 'Create a new module model action';
 
     /**
      * @var string
      */
-    protected $type = 'Module class';
+    protected $type = 'Module model';
 
     /**
      * @return string
      */
     protected function getStub(): string
     {
-        return $this->resolveStubPath('/stubs/module/class.stub');
+        return $this->resolveStubPath('/stubs/module/model.stub');
     }
 
     /**
@@ -50,8 +50,10 @@ class MakeModuleClassCommand extends GeneratorCommand
      */
     protected function getDefaultNamespace($rootNamespace): string
     {
-        $module = Str::pluralStudly($this->argument('name'));
+        $module = Str::remove('Store', $this->argument('name'));
 
-        return "Modules\\$module";
+        $module = Str::pluralStudly($module);
+
+        return "Modules\\$module\\Models";
     }
 }
