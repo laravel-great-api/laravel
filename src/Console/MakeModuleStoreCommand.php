@@ -52,6 +52,6 @@ class MakeModuleStoreCommand extends GeneratorCommand
     {
         $module = Str::pluralStudly($this->argument('name'));
 
-        return $rootNamespace . "\Modules\\$module";
+        return $rootNamespace . "\Modules\\$module" . "Store";
     }
 }
